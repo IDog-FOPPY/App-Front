@@ -1,0 +1,33 @@
+name: foppy_front
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.2 <4.0.0'
+
+
+dependencies:
+
+  get: ^4.6.6  #page routing
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+
+# 플러터에 사용되는 패키지 (글꼴, 아이콘, 이미지 등등 여기에 추가)
+flutter:
+  uses-material-design: true
+
+  #assets 사용 선언
+  assets:
+    - assets/Image/Logo.png
+
