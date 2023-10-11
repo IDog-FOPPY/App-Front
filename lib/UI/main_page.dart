@@ -18,8 +18,8 @@ class _MainPageState extends State<MainPage> {
       children: [
         Container(
           margin: EdgeInsets.only(top: 20),   //위쪽 방향으로 여백
-          width: screenSize.width - 50,
-          height: (screenSize.width - 50)*0.7,
+          width: screenSize.width * 0.85,
+          height: screenSize.width * 0.6,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
           child:FittedBox(
               fit: BoxFit.fill,
@@ -27,17 +27,24 @@ class _MainPageState extends State<MainPage> {
           )
         ),
         Positioned(
-          top:0, bottom:0, left: 25, //컨테이너의 중앙에 오게끔
-          child: TextButton(
-              onPressed: null,
-              child: Text("비문에 대해 알아보기 >", style: TextStyle(color: Colors.black54,fontSize: 15))
-          ),
+            bottom:0, top: 0, left: 25, //컨테이너의 중앙에 오게끔
+            child: Container(
+              width: screenSize.width * 0.2,
+              height: screenSize.width * 0.05,
+              child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: InkWell(
+                    onTap: null,
+                    child: Image.asset('assets/Image/img1.png'),    //비문이 뭔가요? 부분
+                  )
+              ),
+            )
         ),
         Positioned(
           bottom: 20, left: 25,
             child: Container(
-              width: (screenSize.width/2)-10,
-              height: screenSize.width/7,
+              width: screenSize.width * 0.4,
+              height: screenSize.width * 0.12,
               child: FittedBox(
                 fit: BoxFit.fill,
                 child: InkWell(
