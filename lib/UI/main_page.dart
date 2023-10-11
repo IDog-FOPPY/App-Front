@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:foppy_front/UI/drawer_page.dart";
 
 class MainPage extends StatefulWidget {   //즉각적인 변화를 반영하는 페이지이므로 stf 사용
   const MainPage({Key? key}) : super(key: key);
@@ -10,10 +11,7 @@ class MainPage extends StatefulWidget {   //즉각적인 변화를 반영하는 
 class _MainPageState extends State<MainPage> {
 
 
-  Widget yellowBox(){
-    MediaQueryData deviceData = MediaQuery.of(context);
-    Size screenSize = deviceData.size;
-
+  Widget yellowBox(Size screenSize){
     return Stack(
       children: [
         Container(
@@ -58,66 +56,10 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Widget drawerList(){
-    return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 10),
-      children: <Widget>[
-        UserAccountsDrawerHeader(
-          currentAccountPicture: CircleAvatar(
-            backgroundColor: Colors.white,
-            backgroundImage: AssetImage('assets/Image/defaultProfile.png'),
-          ),
-          accountName: Text('사용자 이름',style: TextStyle(color: Colors.black45)),
-          accountEmail: Text('사용자 이메일',style: TextStyle(color: Colors.black45)),
-          decoration: BoxDecoration(color: Colors.transparent),
-        ),
-        ListTile(
-          leading:Image.asset('assets/Image/dognose.png'),
-          title: Text('비문이란?'),
-          onTap: null,
-        ),
-        Divider(color: Colors.black12,thickness: 1.0),
-
-        ListTile(
-          leading: Image.asset('assets/Image/dog.png'),
-          title: Text('반려견 등록'),
-          onTap: null,
-        ),
-        ListTile(
-          leading: Image.asset('assets/Image/magnifier.png'),
-          title: Text('유기견 등록 및 확인'),
-          onTap: null,
-        ),
-        ListTile(
-          leading: Image.asset('assets/Image/community.png'),
-          title: Text('커뮤니티'),
-          onTap: null,
-        ),
-        Divider(color: Colors.black12,thickness: 1.0),
-
-        ListTile(
-          leading: Image.asset('assets/Image/support.png'),
-          title: Text('고객센터'),
-          onTap: null,
-        ),
-        ListTile(
-          leading: Image.asset('assets/Image/help.png'),
-          title: Text('자주 묻는 질문'),
-          onTap: null,
-        ),
-        ListTile(
-          leading: Image.asset('assets/Image/logout.png'),
-          title: Text('로그아웃'),
-          onTap: null,
-        ),
-      ],
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-
-
+    MediaQueryData deviceData = MediaQuery.of(context);
+    Size screenSize = deviceData.size;
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black38),
@@ -125,7 +67,7 @@ class _MainPageState extends State<MainPage> {
         elevation: 0,   //그림자 농도 0으로 설정
       ),
       endDrawer: Drawer(
-        child: drawerList()
+        child: MenuDrawer()
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,   //세로 스크롤
@@ -133,7 +75,7 @@ class _MainPageState extends State<MainPage> {
           child: Center(
             child: Column(
               children: [
-                yellowBox(),
+                yellowBox(screenSize),
               ],
             ),
           ),
