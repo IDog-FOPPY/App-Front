@@ -13,7 +13,6 @@ class _MainPageState extends State<MainPage> {
   Widget yellowBox(){
     MediaQueryData deviceData = MediaQuery.of(context);
     Size screenSize = deviceData.size;
-    final String bannerIMG = 'assets/Image/Banner.png';
 
     return Stack(
       children: [
@@ -24,7 +23,7 @@ class _MainPageState extends State<MainPage> {
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(30)),
           child:FittedBox(
               fit: BoxFit.fill,
-              child: Image.asset(bannerIMG)
+              child: Image.asset('assets/Image/banner.png')
           )
         ),
         Positioned(
@@ -34,6 +33,20 @@ class _MainPageState extends State<MainPage> {
               child: Text("비문에 대해 알아보기 >", style: TextStyle(color: Colors.black54,fontSize: 15))
           ),
         ),
+        Positioned(
+          bottom: 20, left: 25,
+            child: Container(
+              width: (screenSize.width/2)-10,
+              height: screenSize.width/7,
+              child: FittedBox(
+                fit: BoxFit.fill,
+                child: InkWell(
+                  onTap: null,
+                  child: Image.asset('assets/Image/finding.png'),
+                )
+              ),
+            )
+        )
       ],
     );
   }
@@ -45,7 +58,7 @@ class _MainPageState extends State<MainPage> {
         UserAccountsDrawerHeader(
           currentAccountPicture: CircleAvatar(
             backgroundColor: Colors.white,
-            backgroundImage: AssetImage('assets/Image/DefaultProfile.png'),
+            backgroundImage: AssetImage('assets/Image/defaultProfile.png'),
           ),
           accountName: Text('사용자 이름',style: TextStyle(color: Colors.black45)),
           accountEmail: Text('사용자 이메일',style: TextStyle(color: Colors.black45)),

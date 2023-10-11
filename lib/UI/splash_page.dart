@@ -29,7 +29,7 @@ class Splash extends StatelessWidget {
       Navigator.push(context, CustomRoute(builder: (context) => MainPage()));
     });
 
-    final String logoIMG = 'assets/Image/Logo.png';
+    final String logoIMG = 'assets/Image/logo.png';
 
     return Scaffold(
       resizeToAvoidBottomInset: false, //키보드 활성화 시 화면 밀림 off
