@@ -30,4 +30,13 @@ flutter:
   #assets 사용 선언
   assets:
     - assets/Image/Logo.png
+    - assets/Image/Banner.png
+    - assets/Image/DefaultProfile.png
+    - assets/Image/community.png
+    - assets/Image/dog.png
+    - assets/Image/dognose.png
+    - assets/Image/help.png
+    - assets/Image/logout.png
+    - assets/Image/magnifier.png
+    - assets/Image/support.png
 

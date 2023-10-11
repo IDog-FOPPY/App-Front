@@ -38,7 +38,7 @@ class Splash extends StatelessWidget {
             height: MediaQuery.of(context).size.height,
             child: Center(
                 child: Container(
-                  margin: EdgeInsets.all(50),   //외부 50씩 여백 생성
+                  margin: EdgeInsets.all(100),   //외부 50씩 여백 생성
                   child:Image.asset(logoIMG,
                       width: double.infinity,   //부모크기에 맞게끔 조정
                       height: double.infinity),
