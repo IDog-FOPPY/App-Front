@@ -29,7 +29,7 @@ class Splash extends StatelessWidget {
       Navigator.push(context, CustomRoute(builder: (context) => MainPage()));
     });
 
-    final String logoIMG = 'assets/Image/Logo.png';
+    final String logoIMG = 'assets/Image/logo.png';
 
     return Scaffold(
       resizeToAvoidBottomInset: false, //키보드 활성화 시 화면 밀림 off
@@ -38,7 +38,7 @@ class Splash extends StatelessWidget {
             height: MediaQuery.of(context).size.height,
             child: Center(
                 child: Container(
-                  margin: EdgeInsets.all(50),   //외부 50씩 여백 생성
+                  margin: EdgeInsets.all(100),   //외부 50씩 여백 생성
                   child:Image.asset(logoIMG,
                       width: double.infinity,   //부모크기에 맞게끔 조정
                       height: double.infinity),
