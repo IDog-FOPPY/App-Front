@@ -70,6 +70,11 @@ class DNInfo extends StatelessWidget {
     MediaQueryData deviceData = MediaQuery.of(context);
     Size screenSize = deviceData.size;
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black38),
+        backgroundColor: Colors.transparent, //앱바 배경 투명
+        elevation: 0, //그림자 농도 0으로 설정
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child:  Center(
